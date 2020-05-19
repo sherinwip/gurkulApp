@@ -1,0 +1,7 @@
+{
+  "name": "gurukul",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
