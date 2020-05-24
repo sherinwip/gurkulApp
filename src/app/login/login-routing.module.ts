@@ -7,6 +7,10 @@ const routes: Routes = [
   {
     path: '',
     component: LoginPage
+  },
+  {
+    path: 'pincreation',
+    loadChildren: () => import('./pincreation/pincreation.module').then( m => m.PincreationPageModule)
   }
 ];
 

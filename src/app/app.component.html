@@ -1,4 +1,20 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+    <ion-menu side="start" menuId="first">
+        <ion-header>
+          <ion-toolbar color="primary">
+            <ion-title>Gurukul</ion-title>
+          </ion-toolbar>
+        </ion-header>
+        <ion-content>
+          <ion-list>
+            <ion-item>Batch Management</ion-item>
+            <ion-item>Student Management</ion-item>
+            <ion-item>Course MAnagement</ion-item>
+            <ion-item>Fee Management</ion-item>
+            <ion-item>Logout</ion-item>
+          </ion-list>
+        </ion-content>
+      </ion-menu>
+  <ion-router-outlet main></ion-router-outlet>
 
 </ion-app>

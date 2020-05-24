@@ -2,13 +2,10 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
-  },
+  
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
   {
@@ -18,6 +15,14 @@ const routes: Routes = [
   {
     path: 'entitytypeselect',
     loadChildren: () => import('./entitytypeselect/entitytypeselect.module').then( m => m.EntitytypeselectPageModule)
+  },
+  {
+    path: 'insitituesignup',
+    loadChildren: () => import('./insitiute/insitituesignup/insitituesignup.module').then( m => m.InsitituesignupPageModule)
+  },
+  {
+    path: 'institutehome',
+    loadChildren: () => import('./insitiute/home/home.module').then( m => m.HomePageModule)
   },
 ];
 
