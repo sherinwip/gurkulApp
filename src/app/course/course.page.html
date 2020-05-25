@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-menu-button content-id="first"></ion-menu-button>
+        </ion-buttons>
+    <ion-title>course</ion-title>
+   <ion-icon slot="end" name="add" (click)="addCourse()" color="primary"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid >
+    <ion-row >
+      <ion-col size="6" *ngFor="let course of loadedCoursesList">
+        <ion-card button (click)="openCourseDetails(course.courseID)">
+          <ion-card-header>
+           
+            <ion-card-title>
+              {{course.courseName}}
+              
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-img [src]="course.courseImg"></ion-img>
+            <ion-label class="coursefeelabel">Rs {{course.coursefees}}</ion-label>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6"></ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
