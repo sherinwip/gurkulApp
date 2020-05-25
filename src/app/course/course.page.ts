@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { MenuController } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { CourseService } from './course.service';
+import { Course } from './course.model';
+import { Subscription } from 'rxjs';
 
 
 @Component({
@@ -9,13 +11,16 @@ import { CourseService } from './course.service';
   templateUrl: './course.page.html',
   styleUrls: ['./course.page.scss'],
 })
-export class CoursePage implements OnInit {
+export class CoursePage implements OnInit ,OnDestroy{
 
-   loadedCoursesList;
+   loadedCoursesList:Course[];
+   courseSub:Subscription
   constructor(private router:Router,private courseListService:CourseService) { }
 
   ngOnInit() {
-    this.loadedCoursesList  = this.courseListService.courseArr;
+   this.courseSub =  this.courseListService.courses.subscribe(course =>{
+      this.loadedCoursesList = course;
+    });
   }
 
   addCourse(){
@@ -26,5 +31,9 @@ export class CoursePage implements OnInit {
     console.log('id='+id);
     this.router.navigate(['course/coursedetail',id]);
   }
-
+ngOnDestroy(){
+  if(this.courseSub){
+    this.courseSub.unsubscribe();
+  }
+}
 }
