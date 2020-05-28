@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { CoursePage } from './course.page';
+import { HomePage } from '../insitiute/home/home.page';
 
 const routes: Routes = [
   {
@@ -23,6 +24,16 @@ const routes: Routes = [
 
     ]
     //loadChildren: () => import('./coursedetail/coursedetail.module').then( m => m.CoursedetailPageModule)
+  },
+  {
+    path:"tabs",
+    component:HomePage,
+    children:[
+      {
+        path:'search',
+        loadChildren:() => import('./../insitiute/home/home.module').then(m=> m.HomePageModule)
+      }
+    ]
   }
   
 ];

@@ -24,7 +24,7 @@ export class CoursePage implements OnInit ,OnDestroy{
   }
 
   addCourse(){
-    console.log('opoen add course');
+    console.log('open add course');
   }
 
   openCourseDetails(id:string){

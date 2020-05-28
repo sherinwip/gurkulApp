@@ -15,7 +15,7 @@ export class CourseService {
       {
         courseName:'java',
         courseImg:'https://www.oracle.com/a/ocom/img/cb71-java-logo.png',
-        coursefees:200000,
+        coursefees:'Rs 200000',
         courseID:'j1',
         duration:'2 Months',
         description:'This is java course'
@@ -24,7 +24,7 @@ export class CourseService {
       {
         courseName:'CPP',
         courseImg:'https://www.oracle.com/a/ocom/img/cb71-java-logo.png',
-        coursefees:800,
+        coursefees:'Rs 800',
         courseID:'c1',
         duration:'3 Months',
         description:'This is CPP course'
@@ -32,7 +32,7 @@ export class CourseService {
       }, {
         courseName:'python',
         courseImg:'https://www.oracle.com/a/ocom/img/cb71-java-logo.png',
-        coursefees:200000,
+        coursefees:'Rs 200000',
         courseID:'p1',
         duration:'4 Months',
         description:'This is python course'

@@ -1,37 +1,155 @@
 <ion-header>
-    <ion-toolbar>
+    <ion-toolbar color="primary">
         <ion-buttons slot="start">
             <ion-back-button defaultHref="/course"></ion-back-button>
+            
           </ion-buttons>
+         <ion-buttons slot="end">  
+            <ion-button (click)="editCourseDetails()" fill="clear" *ngIf="!toggleIcon">
+                <ion-icon name="create-outline" slot="icon-only"></ion-icon>
+              </ion-button>
+              <ion-button (click)="editCourseDetails()" fill="clear" *ngIf="toggleIcon">
+                  <ion-icon name="checkmark-outline" slot="icon-only"></ion-icon>
+                </ion-button>
+         </ion-buttons>
       <ion-title>Course Details {{loadedCourse.courseName}}</ion-title>
+      
     </ion-toolbar>
   </ion-header>
 
 <ion-content>
   
-  <ion-grid >
+  <ion-grid *ngIf="toggleIcon">
     <ion-row>
-      <ion-col size-sm="6" offset-sm="3">
-         <ion-item>
-            <ion-input type="text">{{loadedCourse.courseName}}</ion-input>
-         </ion-item>
+      <ion-col size-sm="3" offset-sm="3">
+        <ion-item > 
+         
+          <ion-label position="inline">Course Name: </ion-label>
+        </ion-item>
         </ion-col>
+        <ion-col size-sm="3" offset-sm="3">
+          <ion-item >
+            
+            <ion-input type="text" type="text" value= "{{loadedCourse.courseName}}"></ion-input>
+          </ion-item>
+           </ion-col>
       
     </ion-row>
     <ion-row>
-        <ion-col size-sm="6" offset-sm="3">
-           <ion-item>
-              <ion-input type="text">{{loadedCourse.duration}}</ion-input>
-           </ion-item>
+        <ion-col size-sm="3" offset-sm="3">
+          <ion-item >
             
-    
-                
-            
-        </ion-col>
+            <ion-label position="inline">Duration:</ion-label>
+          </ion-item>
+          </ion-col>
+          <ion-col size-sm="3" offset-sm="3">
+            <ion-item >
+              
+              <ion-input type="text" type="text" value= "{{loadedCourse.duration}}" readonly></ion-input>
+            </ion-item>
+             </ion-col>
+       
         
       </ion-row>
+      <ion-row>
+          <ion-col size-sm="3" offset-sm="3">
+            <ion-item>
+              
+              <ion-label position="inline">Description: </ion-label>
+            </ion-item>
+            </ion-col>
+            <ion-col size-sm="3" offset-sm="3">
+              <ion-item >
+                
+                <ion-input type="text" type="text" value= "{{loadedCourse.description}}" readonly></ion-input>
+              </ion-item>
+               </ion-col>
+          
+          
+        </ion-row>
+        <ion-row>
+            <ion-col size-sm="3" offset-sm="3">
+              <ion-item >
+                
+                <ion-label position="inline">Fees: </ion-label>
+              </ion-item>
+              </ion-col>
+              <ion-col size-sm="3" offset-sm="3">
+                <ion-item >
+                  
+                  <ion-input type="text" type="text" value= "{{loadedCourse.coursefees}}" readonly></ion-input>
+                </ion-item>
+                 </ion-col>
+          
+        </ion-row>
   
   </ion-grid>
+  <ion-grid *ngIf="!toggleIcon">
+      <ion-row>
+        <ion-col size-sm="3" offset-sm="3">
+          <ion-item lines="none">
+           
+            <ion-label position="inline">Course Name: </ion-label>
+          </ion-item>
+          </ion-col>
+          <ion-col size-sm="3" offset-sm="3">
+            <ion-item lines="none">
+              
+              <ion-input type="text" type="text" value= "{{loadedCourse.courseName}}" readonly></ion-input>
+            </ion-item>
+             </ion-col>
+        
+      </ion-row>
+      <ion-row>
+          <ion-col size-sm="3" offset-sm="3">
+            <ion-item lines="none">
+              
+              <ion-label position="inline">Duration:</ion-label>
+            </ion-item>
+            </ion-col>
+            <ion-col size-sm="3" offset-sm="3">
+              <ion-item lines="none">
+                
+                <ion-input type="text" type="text" value= "{{loadedCourse.duration}}" readonly></ion-input>
+              </ion-item>
+               </ion-col>
+         
+          
+        </ion-row>
+        <ion-row>
+            <ion-col size-sm="3" offset-sm="3">
+              <ion-item lines ="none">
+                
+                <ion-label position="inline">Description: </ion-label>
+              </ion-item>
+              </ion-col>
+              <ion-col size-sm="3" offset-sm="3">
+                <ion-item lines="none">
+                  
+                  <ion-input type="text" type="text" value= "{{loadedCourse.description}}" readonly></ion-input>
+                </ion-item>
+                 </ion-col>
+            
+            
+          </ion-row>
+          <ion-row>
+              <ion-col size-sm="3" offset-sm="3">
+                <ion-item lines="none">
+                  
+                  <ion-label position="inline">Fees: </ion-label>
+                </ion-item>
+                </ion-col>
+                <ion-col size-sm="3" offset-sm="3">
+                  <ion-item lines="none">
+                    
+                    <ion-input type="text" type="text" value= "{{loadedCourse.coursefees}}" readonly></ion-input>
+                  </ion-item>
+                   </ion-col>
+            
+          </ion-row>
+    
+    </ion-grid>
+  
 
 </ion-content>
 

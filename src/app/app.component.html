@@ -2,16 +2,49 @@
     <ion-menu side="start" menuId="first">
         <ion-header>
           <ion-toolbar color="primary">
-            <ion-title>Gurukul</ion-title>
+              
+                <ion-menu-toggle>
+                <ion-item [routerLink]="['/institutehome']" routerLinkActive="router-link-active"  >
+                <ion-icon name="home-outline" slot="start"></ion-icon>
+                <ion-label>Gurukul</ion-label>
+              </ion-item>
+              </ion-menu-toggle>
+            
           </ion-toolbar>
         </ion-header>
         <ion-content>
           <ion-list>
-            <ion-item>Batch</ion-item>
-            <ion-item>Student</ion-item>
-            <ion-item (click)="openCourses()" >Course</ion-item>
-            <ion-item>Fee</ion-item>
-            <ion-item>Logout</ion-item>
+            <ion-menu-toggle>
+            <ion-item>
+                <ion-icon name="calendar-outline" slot="start"></ion-icon>
+              <ion-label>Batch</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+          <ion-menu-toggle>
+            <ion-item>
+                <ion-icon name="people-outline" slot="start"></ion-icon>
+              <ion-label>Student</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item (click)="openCourses()" >
+              <ion-icon slot="start" name="book-outline"></ion-icon>
+              <ion-label>Course</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        <ion-menu-toggle>
+            <ion-item>
+                <ion-icon name="cash-outline" slot="start"></ion-icon>
+              <ion-label>Fee</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        <ion-menu-toggle>
+            <ion-item>
+                <ion-icon name="exit-outline" slot="start"></ion-icon>
+              <ion-label>Logout</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+         
           </ion-list>
         </ion-content>
       </ion-menu>

@@ -12,6 +12,7 @@ import { Subscription } from 'rxjs';
 export class CoursedetailPage implements OnInit,OnDestroy{
 loadedCourse:Course;
 courSub:Subscription;
+toggleIcon:boolean;
 
   constructor(private courseService:CourseService,private routemap:ActivatedRoute) { }
 
@@ -30,6 +31,10 @@ courSub:Subscription;
       });
     //this.loadedCourse = this.courseService.fetchCourse();
 
+  }
+
+  editCourseDetails(){
+    this.toggleIcon = true;
   }
 
   ngOnDestroy(){
