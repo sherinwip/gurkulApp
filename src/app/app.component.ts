@@ -34,4 +34,10 @@ export class AppComponent {
 
 
 }
+
+openHome(){
+  this.menuCtrl.close();
+    this.router.navigateByUrl('/institutehome');
+
+}
 }

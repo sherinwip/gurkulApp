@@ -4,3 +4,7 @@
     font-size: var(--detail-icon-font-size);
     opacity: var(--detail-icon-opacity);
   }
+
+  .item .item-content {
+    background-color: transparent !important;
+  }

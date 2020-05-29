@@ -3,12 +3,14 @@
         <ion-header>
           <ion-toolbar color="primary">
               
-                <ion-menu-toggle>
-                <ion-item [routerLink]="['/institutehome']" routerLinkActive="router-link-active"  >
-                <ion-icon name="home-outline" slot="start"></ion-icon>
+              
+                <ion-item color="none">
+                
+                <ion-icon name="home-outline" slot="start" (click)="openHome()"></ion-icon>
                 <ion-label>Gurukul</ion-label>
+             
               </ion-item>
-              </ion-menu-toggle>
+              
             
           </ion-toolbar>
         </ion-header>
